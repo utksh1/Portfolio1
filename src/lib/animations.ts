@@ -340,3 +340,115 @@ export const orbitGlow: Variants = {
     },
   },
 };
+
+// Mission Card Animations
+export const missionCardFloat: Variants = {
+  initial: { y: 0, rotateX: 0, rotateY: 0 },
+  animate: {
+    y: [0, -8, 0],
+    rotateX: [0, 2, 0],
+    rotateY: [0, -1, 0],
+    transition: {
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
+export const missionCardHover: Variants = {
+  initial: { scale: 1, boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)" },
+  hover: {
+    scale: 1.05,
+    y: -10,
+    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+    rotateX: 5,
+    rotateY: 5,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const missionCardGlow: Variants = {
+  initial: { opacity: 0 },
+  hover: {
+    opacity: 1,
+    scale: [1, 1.1, 1],
+    transition: {
+      duration: 0.6,
+      ease: "easeInOut",
+    },
+  },
+};
+
+export const missionCardContent: Variants = {
+  initial: { opacity: 0.8 },
+  hover: {
+    opacity: 1,
+    scale: 1.02,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const missionCardButton: Variants = {
+  initial: { opacity: 0, y: 20 },
+  hover: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      delay: 0.1,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const spotlightBadge: Variants = {
+  initial: { opacity: 0, scale: 0, rotate: -180 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay: 0.3,
+    },
+  },
+};
+
+export const techStackTag: Variants = {
+  initial: { opacity: 0, scale: 0.8 },
+  hover: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const filterButton: Variants = {
+  initial: { scale: 1, opacity: 0.8 },
+  hover: {
+    scale: 1.05,
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
+  },
+  tap: {
+    scale: 0.95,
+    transition: {
+      duration: 0.1,
+      ease: "easeIn",
+    },
+  },
+};
