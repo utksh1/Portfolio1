@@ -66,7 +66,7 @@ const MissionCard: React.FC<MissionCardProps> = ({ project, index, className = "
         transition: {
           duration: 0.6,
           delay: index * 0.1,
-          ease: [0.4, 0, 0.2, 1],
+          ease: "easeOut",
         },
       }}
       onMouseMove={handleMouseMove}
