@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cyberpunk Color Variables */
+  --cyber-cyan: #00ff88;
+  --cyber-purple: #a855f7;
+  --cyber-blue: #0084ff;
+  --space-navy: #0a0e27;
+  --space-dark: #0f1729;
+  --electric-cyan: #00ffff;
+  --neon-pink: #ff0080;
+  
+  /* Glow Variables */
+  --glow-cyan: rgba(0, 255, 136, 0.5);
+  --glow-purple: rgba(168, 85, 247, 0.5);
+  --glow-blue: rgba(0, 132, 255, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: var(--space-navy);
+  color: white;
+}
+
+body {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  background: linear-gradient(135deg, var(--space-navy) 0%, var(--space-dark) 50%, var(--space-navy) 100%);
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom Cyberpunk Utilities */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+  
+  .text-glow-cyan {
+    text-shadow: 0 0 10px var(--cyber-cyan), 0 0 20px var(--cyber-cyan), 0 0 30px var(--cyber-cyan);
+  }
+  
+  .text-glow-purple {
+    text-shadow: 0 0 10px var(--cyber-purple), 0 0 20px var(--cyber-purple), 0 0 30px var(--cyber-purple);
+  }
+  
+  .text-glow-blue {
+    text-shadow: 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue), 0 0 30px var(--cyber-blue);
+  }
+  
+  .border-glow-cyan {
+    border: 1px solid var(--cyber-cyan);
+    box-shadow: 0 0 10px var(--glow-cyan), inset 0 0 10px rgba(0, 255, 136, 0.1);
+  }
+  
+  .border-glow-purple {
+    border: 1px solid var(--cyber-purple);
+    box-shadow: 0 0 10px var(--glow-purple), inset 0 0 10px rgba(168, 85, 247, 0.1);
+  }
+  
+  .border-glow-blue {
+    border: 1px solid var(--cyber-blue);
+    box-shadow: 0 0 10px var(--glow-blue), inset 0 0 10px rgba(0, 132, 255, 0.1);
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .cyber-button {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--cyber-cyan);
+    color: var(--cyber-cyan);
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-button:hover {
+    background: var(--cyber-cyan);
+    color: var(--space-navy);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  }
+  
+  .cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .cyber-button:hover::before {
+    left: 100%;
+  }
+  
+  .neon-text {
+    color: var(--cyber-cyan);
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyber-cyan);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--electric-cyan);
+}
+
+/* Selection Styling */
+::selection {
+  background: var(--glow-cyan);
+  color: white;
+}
+
+/* Focus Outline */
+:focus-visible {
+  outline: 2px solid var(--cyber-cyan);
+  outline-offset: 2px;
+}
