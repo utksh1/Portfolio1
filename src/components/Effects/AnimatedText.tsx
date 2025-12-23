@@ -53,7 +53,6 @@ export const GlitchText: React.FC<GlitchTextProps> = ({ children, className = ""
             animate: {
               ...glitchAnimation.animate,
               transition: {
-                ...glitchAnimation.animate?.transition,
                 delay,
               },
             },
@@ -135,7 +134,7 @@ export const RevealText: React.FC<RevealTextProps> = ({ children, className = ""
       transition={{
         duration: 0.8,
         delay,
-        ease: [0.4, 0, 0.2, 1],
+        ease: "easeOut",
         transform: {
           type: "spring",
           stiffness: 100,

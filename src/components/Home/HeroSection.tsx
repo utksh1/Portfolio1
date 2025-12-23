@@ -109,7 +109,7 @@ export default function HeroSection({ bootComplete }: HeroSectionProps) {
                 exit={{ opacity: 0, y: -30, scale: 1.05 }}
                 transition={{
                   duration: 1.5,
-                  ease: [0.4, 0, 0.2, 1],
+                  ease: "easeOut",
                   scale: { type: "spring", stiffness: 100, damping: 10 },
                 }}
               >

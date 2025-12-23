@@ -5,28 +5,8 @@ npm warn Unknown env config "python". This will stop working in the next major v
 
 ▲ Next.js 16.1.1 (Turbopack)
 - Local:         http://localhost:3000
-- Network:       http://10.16.8.244:3000
-- Environments: .env.local
+- Network:       http://10.16.14.155:3000
 
 ✓ Starting...
-✓ Ready in 1430ms
- GET / 200 in 1268ms (compile: 1102ms, render: 166ms)
- GET /about 200 in 111ms (compile: 52ms, render: 59ms)
- GET /stack 200 in 84ms (compile: 47ms, render: 37ms)
- GET /projects 200 in 95ms (compile: 52ms, render: 42ms)
-Error: Route "/projects/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at ProjectPage (src/app/projects/[slug]/page.tsx:12:28)
-  10 |       <div className="text-center space-y-6">
-  11 |         <h1 className="text-4xl font-cyber text-glow-cyan font-bold">
-> 12 |           Project: {params.slug}
-     |                            ^
-  13 |         </h1>
-  14 |         <p className="text-lg text-cyber-cyan font-mono">
-  15 |           Detailed project view coming soon
- GET /projects/test 200 in 867ms (compile: 727ms, render: 140ms)
- GET /journey 200 in 83ms (compile: 47ms, render: 36ms)
- GET /contact 200 in 84ms (compile: 41ms, render: 43ms)
- GET /terminal 200 in 77ms (compile: 44ms, render: 33ms)
- GET /lab 200 in 87ms (compile: 41ms, render: 45ms)
- GET /ai-core 200 in 85ms (compile: 47ms, render: 38ms)
-[?25h
+✓ Ready in 1109ms
+ HEAD /stack 200 in 1465ms (compile: 1100ms, render: 365ms)

@@ -112,7 +112,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={heroInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
-              transition={{ duration: 1.5, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
             >
               <NeonText color="cyan" className="text-6xl md:text-8xl lg:text-9xl font-cyber font-bold tracking-wider">
                 SYSTEM PROFILE

@@ -103,13 +103,6 @@ export default function MetricsSection({ metrics, className = "" }: MetricsSecti
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 15,
-      },
     },
   };
 
@@ -132,6 +125,12 @@ export default function MetricsSection({ metrics, className = "" }: MetricsSecti
             key={index}
             className="relative group"
             variants={itemVariants}
+            transition={{
+              duration: 0.6,
+              type: "spring" as const,
+              stiffness: 100,
+              damping: 15,
+            }}
           >
             {/* Card Background */}
             <div className="relative p-6 text-center glass-dark border border-cyber-cyan/30 rounded-lg hover:border-cyber-cyan/60 transition-all duration-300 hover:scale-105 hover:-translate-y-1">

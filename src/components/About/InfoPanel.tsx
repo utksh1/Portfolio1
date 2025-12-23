@@ -50,14 +50,6 @@ export default function InfoPanel({
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.6,
-        delay,
-        ease: [0.4, 0, 0.2, 1],
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 15,
-      },
     },
   };
 
@@ -79,6 +71,13 @@ export default function InfoPanel({
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
+      transition={{
+        duration: 0.6,
+        delay,
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      }}
     >
       {/* Main Card */}
       <div

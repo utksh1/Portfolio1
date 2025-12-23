@@ -80,10 +80,6 @@ export default function MiniTimeline({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
     },
   };
 
@@ -99,14 +95,6 @@ export default function MiniTimeline({
       x: 0,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.6,
-        delay: index * 0.2,
-        ease: [0.4, 0, 0.2, 1],
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 15,
-      },
     }),
   };
 
@@ -233,6 +221,10 @@ export default function MiniTimeline({
       variants={timelineVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
     >
       {/* Horizontal Timeline Line */}
       <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-cyber-cyan via-purple-500 to-cyber-blue opacity-50 transform -translate-y-1/2" />
@@ -247,6 +239,13 @@ export default function MiniTimeline({
               className="relative flex flex-col items-center"
               variants={itemVariants}
               custom={index}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+                type: "spring" as const,
+                stiffness: 100,
+                damping: 15,
+              }}
             >
               {/* Timeline Node */}
               <motion.div
