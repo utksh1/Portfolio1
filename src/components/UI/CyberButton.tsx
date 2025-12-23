@@ -98,7 +98,6 @@ export default function CyberButton({
         whileTap="tap"
         whileFocus="hover"
         onClick={handleClick as any}
-        disabled={disabled}
       >
         {/* Energy pulse effect */}
         <motion.div

@@ -148,12 +148,11 @@ export const glitchAnimation: Variants = {
   initial: { opacity: 0, x: -10 },
   animate: {
     opacity: 1,
-    x: 0,
+    x: [0, 10, -5, 5, -2, 0],
     transition: {
       duration: 0.3,
       ease: "easeOut",
       times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-      x: [0, 10, -5, 5, -2, 0],
     },
   },
 };
@@ -236,6 +235,108 @@ export const scrollHint: Variants = {
     transition: {
       duration: 0.5,
       ease: "easeIn",
+    },
+  },
+};
+
+// Tech Stack 3D Animations
+export const nodeScaleUp: Variants = {
+  initial: { scale: 1, opacity: 0.8 },
+  hover: {
+    scale: 1.3,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+  active: {
+    scale: 1.2,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const infoPanelSlide: Variants = {
+  hidden: { x: '100%', opacity: 0 },
+  visible: { 
+    x: 0, 
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      damping: 20,
+      stiffness: 300,
+      duration: 0.5,
+    },
+  },
+  exit: { 
+    x: '100%', 
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeIn",
+    },
+  },
+};
+
+export const orbitRotation: Variants = {
+  initial: { rotateZ: 0 },
+  animate: {
+    rotateZ: 360,
+    transition: {
+      duration: 10,
+      repeat: Infinity,
+      ease: "linear",
+    },
+  },
+};
+
+export const labelFade: Variants = {
+  hidden: { opacity: 0, y: 10, scale: 0.8 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+  exit: { 
+    opacity: 0, 
+    y: 10, 
+    scale: 0.8,
+    transition: {
+      duration: 0.2,
+      ease: "easeIn",
+    },
+  },
+};
+
+export const techCardSlideIn: Variants = {
+  hidden: { opacity: 0, y: 30, scale: 0.9 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const orbitGlow: Variants = {
+  initial: { opacity: 0.1 },
+  animate: {
+    opacity: [0.1, 0.3, 0.1],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut",
     },
   },
 };
