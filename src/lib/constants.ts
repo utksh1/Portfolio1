@@ -49,3 +49,20 @@ export const themeConfig = {
     cyber: "Orbitron, monospace",
   },
 };
+
+// Navigation Routes
+export const navigationRoutes = [
+  { label: "Home", path: "/", icon: "Home" },
+  { label: "About", path: "/about", icon: "User" },
+  { label: "Stack", path: "/stack", icon: "Cpu" },
+  { label: "Projects", path: "/projects", icon: "Briefcase" },
+  { label: "Journey", path: "/journey", icon: "GitBranch" },
+  { label: "Contact", path: "/contact", icon: "Mail" },
+  { label: "Terminal", path: "/terminal", icon: "Terminal" },
+  { label: "Lab", path: "/lab", icon: "FlaskConical" },
+  { label: "AI Core", path: "/ai-core", icon: "Bot" },
+];
+
+export const externalLinks = {
+  resume: { label: "Resume", url: "https://utkarsh.tech", icon: "FileText" },
+};
