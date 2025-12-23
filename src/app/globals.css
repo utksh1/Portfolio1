@@ -34,7 +34,7 @@ body {
 }
 
 body {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   background: linear-gradient(135deg, var(--space-navy) 0%, var(--space-dark) 50%, var(--space-navy) 100%);
   background-attachment: fixed;
 }

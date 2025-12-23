@@ -24,8 +24,8 @@ const config: Config = {
         'glow-blue': 'rgba(0, 132, 255, 0.5)',
       },
       fontFamily: {
-        'mono': ['JetBrains Mono', 'Courier New', 'monospace'],
-        'cyber': ['Orbitron', 'monospace'],
+        'mono': ['var(--font-jetbrains-mono)', 'Courier New', 'monospace'],
+        'cyber': ['var(--font-orbitron)', 'monospace'],
       },
       animation: {
         'glow': 'glow 2s ease-in-out infinite alternate',
